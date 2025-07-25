@@ -1,5 +1,5 @@
 {
-  "name": "cls-example",
+  "name": "nestjs-gql-swc-plugin-issue",
   "version": "0.0.1",
   "description": "",
   "author": "",
@@ -21,6 +21,7 @@
   },
   "dependencies": {
     "@apollo/server": "^4.12.2",
+    "@mikro-orm/sqlite": "^6.4.16",
     "@nestjs/apollo": "^13.1.0",
     "@nestjs/common": "^11.1.3",
     "@nestjs/core": "^11.1.3",
@@ -28,7 +29,6 @@
     "@nestjs/platform-express": "^11.1.3",
     "axios": "^1.10.0",
     "graphql": "^16.11.0",
-    "nestjs-cls": "^6.0.1",
     "reflect-metadata": "^0.2.2",
     "rxjs": "^7.8.1"
   },
@@ -38,8 +38,8 @@
     "@nestjs/cli": "^11.0.7",
     "@nestjs/schematics": "^11.0.5",
     "@nestjs/testing": "^11.1.3",
-    "@swc/cli": "^0.6.0",
-    "@swc/core": "^1.10.7",
+    "@swc/cli": "^0.7.8",
+    "@swc/core": "^1.13.2",
     "@types/express": "^5.0.0",
     "@types/jest": "^29.5.14",
     "@types/node": "^22.10.7",

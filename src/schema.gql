@@ -3,6 +3,7 @@
 # ------------------------------------------------------
 
 type Author {
+  """This comment will appear"""
   firstName: String
   id: Int!
   lastName: String
@@ -15,8 +16,7 @@ input CreateAuthorInput {
 }
 
 input CreatePostInput {
-  """Example field (placeholder)"""
-  exampleField: Int!
+  title: String!
 }
 
 type Mutation {
@@ -29,8 +29,12 @@ type Mutation {
 }
 
 type Post {
+  bar: String
+  foo: String
   id: Int!
   title: String!
+
+  """This comment will not appear"""
   votes: Int
 }
 
@@ -46,7 +50,6 @@ input UpdateAuthorInput {
 }
 
 input UpdatePostInput {
-  """Example field (placeholder)"""
-  exampleField: Int
   id: Int!
+  title: String
 }
