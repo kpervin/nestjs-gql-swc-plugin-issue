@@ -4,12 +4,13 @@ import { ObjectType, Field } from '@nestjs/graphql';
 
 @ObjectType()
 export class Post extends DefaultEntity {
-  @Field()
+  /**
+   * This comment will appear under the Post type,
+   * but will not under CreatePostInput
+   */
+  @Field() // This is required to annotate a single field or else OmitType throws
   title: string;
 
-  /**
-   * This comment will not appear
-   */
   @Example()
   votes?: number;
 

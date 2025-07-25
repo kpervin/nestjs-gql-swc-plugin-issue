@@ -15,7 +15,6 @@ import metadata from './metadata';
       driver: ApolloDriver,
       useFactory: () => ({
         autoSchemaFile: join(process.cwd(), 'src/schema.gql'),
-        sortSchema: true,
         playground: false,
         plugins: [ApolloServerPluginLandingPageLocalDefault()],
         buildSchemaOptions: {

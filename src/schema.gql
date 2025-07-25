@@ -3,44 +3,44 @@
 # ------------------------------------------------------
 
 type Author {
+  id: Int!
+
   """This comment will appear"""
   firstName: String
-  id: Int!
   lastName: String
   posts: [Post!]!
 }
 
-input CreateAuthorInput {
-  """Example field (placeholder)"""
-  exampleField: Int!
-}
-
-input CreatePostInput {
-  title: String!
-}
-
-type Mutation {
-  createAuthor(createAuthorInput: CreateAuthorInput!): Author!
-  createPost(createPostInput: CreatePostInput!): Post!
-  removeAuthor(id: Int!): Author!
-  removePost(id: Int!): Post!
-  updateAuthor(updateAuthorInput: UpdateAuthorInput!): Author!
-  updatePost(updatePostInput: UpdatePostInput!): Post!
-}
-
 type Post {
-  bar: String
-  foo: String
   id: Int!
-  title: String!
 
-  """This comment will not appear"""
+  """
+  This comment will appear under the Post type,
+  but will not under CreatePostInput
+  """
+  title: String!
   votes: Int
+  foo: String
+  bar: String
 }
 
 type Query {
   author(id: Int!): Author!
   post(id: Int!): Post!
+}
+
+type Mutation {
+  createAuthor(createAuthorInput: CreateAuthorInput!): Author!
+  updateAuthor(updateAuthorInput: UpdateAuthorInput!): Author!
+  removeAuthor(id: Int!): Author!
+  createPost(createPostInput: CreatePostInput!): Post!
+  updatePost(updatePostInput: UpdatePostInput!): Post!
+  removePost(id: Int!): Post!
+}
+
+input CreateAuthorInput {
+  """Example field (placeholder)"""
+  exampleField: Int!
 }
 
 input UpdateAuthorInput {
@@ -49,7 +49,11 @@ input UpdateAuthorInput {
   id: Int!
 }
 
+input CreatePostInput {
+  title: String!
+}
+
 input UpdatePostInput {
-  id: Int!
   title: String
+  id: Int!
 }
